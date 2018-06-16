@@ -1,0 +1,24 @@
+<center>
+<table class="table" style="width:60%">
+    <thead>
+    <tr>
+        <th>번호</th> 
+        <th>내용</th>
+        <th></th> 
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><%= @boardone.id %></td>
+        <td><%= @boardone.tweet %></td>
+        <td><a href="/tweet/<%= @boardone.id %>/edit"><button type="button" class="btn btn-success btn-sm"> 수정 </button></a></td>
+        <td><a href="/tweet/<%= @boardone.id %>/show"><button type="button" class="btn btn-warning btn-sm"> 보기 </button></a></td>
+        <td><a data-confirm="이 글을 삭제하겠습니까?" href="/tweet/<%= @boardone.id %>/destroy"><button type="button" class="btn btn-light btn-sm"> 삭제 </button></a>
+        <td><a href="/tweet"><button type="button" class="btn btn-info btn-sm"> 목록으로 </button></a></td>
+    </tr>
+    </tbody>
+</table>
+</center>

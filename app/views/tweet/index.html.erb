@@ -1,0 +1,50 @@
+<div class="text-center" style="">
+<form class="form-signin" action="/tweet/create" method="POST">
+    <br><br>
+    <h1 class="h3 mb-3 font-weight-normal"> Twitter_App </h1>
+    <div class="container">
+        <img src="https://pbs.twimg.com/media/BXuUiEWCEAAA59G.jpg">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input style="height:40px" size="40" class="form-control" type="text" name="context"><br><br>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="글 등록하기">
+        <p class="mt-5 mb-3 text-muted"> 2018  </p>
+    </div>
+</form>
+</div>
+
+<!--<form class="form-signin">-->
+<!--      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+<!--      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>-->
+<!--      <label for="inputEmail" class="sr-only">Email address</label>-->
+<!--      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">-->
+<!--      <label for="inputPassword" class="sr-only">Password</label>-->
+<!--      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">-->
+
+<!--      <p class="mt-5 mb-3 text-muted"> 2018  </p>-->
+<!--    </form>-->
+
+
+
+
+<center>
+<table class="table" style="width:55%">
+    <thead>
+    <tr>
+        <th>번호</th> 
+        <th>내용</th>
+        <th>IP</th> 
+        <th>보기</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% @boardall.reverse.each do |board| %>
+    <tr>
+        <td><%= board.id %></td>
+        <td><%= board.tweet %></td>
+        <td><%= board.ip_address %></td>
+        <td><a href="/tweet/<%= board.id %>/show"><button type="button" class="btn btn-warning btn-sm"> 보기 </button></a></td>
+        <% end %>    
+    </tr>
+    </tbody>
+</table>
+</center>

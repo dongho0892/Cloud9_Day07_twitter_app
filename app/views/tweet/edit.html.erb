@@ -1,0 +1,27 @@
+<!-- 왜 수정하는 창이 안뜨고 바로 넘어가는 것인가??? / def edit 에 db 저장하는 걸로 넣어놨더니 서버에 저장이 됨.--> 
+
+<!--<form action="/tweet/<#%= @boardall.id %>/update" method="POST">      -->
+<!--    <input type="text" name="context" value="<@%= @boardall.tweet %>">           <!-- @boardall.context 가 아니라 tweet!!!!! -->
+<!--    <input type="submit" value="수정완료">                                      <!-- <#%=  보이는 것   ///  <#%  안보이는 것 -->
+<!--</form>-->
+<form action="/tweet/<%= @boardall.id %>/update" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<center>
+    <table class="text-center">
+        <thead>
+            <tr>
+                <th>번호</th> 
+                <th>내용</th>
+                <th></th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><%= @boardall.id %></th> 
+                <th><input class="form-control" name="context" value="<%= @boardall.tweet %>"></th>
+                <th><input class="btn btn-success" type="submit" value="수정하기"></th>
+            </tr>
+        </tbody>
+    </table>
+</center>
+</form>
